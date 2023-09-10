@@ -27,8 +27,22 @@ function setKeybinds() {
       case 'G':
         window.scrollTo({ top: document.body.scrollHeight });
         break;
+      case '+':
+        scale(0.2);
+        break;
+      case '-':
+        scale(-0.2);
+        break;
     }
   });
+}
+
+var currentScale = 1;
+function scale(delta: number) {
+  const root = document.querySelector('#markdown-body');
+  currentScale += delta;
+  root.style.transformOrigin = '500px 0px';
+  root.style.transform = `scale(${currentScale})`;
 }
 
 addEventListener('DOMContentLoaded', () => {

@@ -1,6 +1,6 @@
 # peek.nvim
 
-*Markdown preview plugin for [Neovim](https://github.com/neovim/neovim)*
+_Markdown preview plugin for [Neovim](https://github.com/neovim/neovim)_
 
 ![preview](media/peek.jpg)
 
@@ -60,15 +60,15 @@ specify browser along with arguments:
 
 `app = { 'chromium', '--new-window' }`
 
-[Chromium based browser](https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium) is recommended.
+[Chromium based browser](<https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium>) is recommended.
 
 ### :bulb: Usage
 
-| method ||
-|-|-|
-| open    | Open preview window                                 |
-| close   | Close preview window                                |
-| is_open | Returns `true` if preview window is currently open  |
+| method  |                                                    |
+| ------- | -------------------------------------------------- |
+| open    | Open preview window                                |
+| close   | Close preview window                               |
+| is_open | Returns `true` if preview window is currently open |
 
 Example command setup:
 
@@ -79,14 +79,16 @@ vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
 
 The following keybinds are active when preview window is focused:
 
-| key ||
-|-|-|
-| k | scroll up               |
-| j | scroll down             |
-| u | scroll up half a page   |
-| d | scroll down half a page |
-| g | scroll to top           |
-| G | scroll to bottom        |
+| key |                         |
+| --- | ----------------------- |
+| k   | scroll up               |
+| j   | scroll down             |
+| u   | scroll up half a page   |
+| d   | scroll down half a page |
+| g   | scroll to top           |
+| G   | scroll to bottom        |
+| +   | zoom in                 |
+| -   | zoom out                |
 
 ### :mag: Preview window
 
