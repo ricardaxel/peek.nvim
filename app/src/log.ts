@@ -5,9 +5,10 @@ import { RotatingFileHandler } from 'https://deno.land/std@0.159.0/log/handlers.
 
 const __args = parse(Deno.args);
 
-const logfile = __args['logfile']
-  ? normalize(__args['logfile'])
-  : join(dirname(new URL(import.meta.url).pathname), '../../peek.log');
+// const logfile = __args['logfile']
+//   ? normalize(__args['logfile'])
+//   : join(dirname(new URL(import.meta.url).pathname), '../../peek.log');
+  const logfile = '/tmp/peek.log'
 
 function formatter(logRecord: LogRecord) {
   const { levelName, msg, args, datetime } = logRecord;

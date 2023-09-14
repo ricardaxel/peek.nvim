@@ -14,7 +14,7 @@ const logger = log.setupLogger();
 
 logger.info(`DENO_ENV: ${DENO_ENV}`, ...Deno.args);
 
-const listener = Deno.listen({ port: 0 });
+const listener = Deno.listen({ port: 5052 });
 const addr = listener.addr as Deno.NetAddr;
 const serverUrl = `${addr.hostname.replace('0.0.0.0', 'localhost')}:${addr.port}`;
 
