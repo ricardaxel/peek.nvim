@@ -5,7 +5,11 @@ import { readChunks } from './read.ts';
 import log from './log.ts';
 import { render } from './markdownit.ts';
 
-const __args = parse(Deno.args);
+const __args = parse(Deno.args, {
+  number: ["port"],
+  default: { port: 0 },
+});
+
 const __dirname = dirname(new URL(import.meta.url).pathname);
 
 const DENO_ENV = Deno.env.get('DENO_ENV');
@@ -14,7 +18,7 @@ const logger = log.setupLogger();
 
 logger.info(`DENO_ENV: ${DENO_ENV}`, ...Deno.args);
 
-const listener = Deno.listen({ port: 5052 });
+const listener = Deno.listen({ port: __args.port });
 const addr = listener.addr as Deno.NetAddr;
 const serverUrl = `${addr.hostname.replace('0.0.0.0', 'localhost')}:${addr.port}`;
 
